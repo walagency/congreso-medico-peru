@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./public/faviconn.ico" />
+    <title>Congreso médico Perú</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <style>
+      @font-face {
+        font-family: "LOREAL-Essentielle-Bold";
+        src: url("./font/LOREAL-Essentielle-Bold.ttf") format("opentype");
+        /* Si la fuente es un archivo .otf, usa el siguiente formato en lugar del formato truetype:
+        src: url('ruta/del/archivo/fuente.otf') format('opentype'); */
+      }
+
+      @font-face {
+        font-family: "LOREAL-Essentielle-Regular";
+        src: url("./font/LOREAL-Essentielle-Regular.ttf") format("opentype");
+        /* Si la fuente es un archivo .otf, usa el siguiente formato en lugar del formato truetype:
+        src: url('ruta/del/archivo/fuente.otf') format('opentype'); */
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(245, 245, 245);
+        background: radial-gradient(
+          circle,
+          rgba(245, 245, 245, 1) 0%,
+          rgba(255, 255, 255, 1) 100%
+        );
+        font-family: "LOREAL-Essentielle-Regular";
+        padding: 10px;
+      }
+
+      .main-container {
+        max-width: 600px;
+        padding: 35px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #ffffff;
+        box-shadow: 0px 5px 15px rgba(120, 78, 175, 0.25);
+
+      }
+
+      .titulo {
+        text-align: center;
+        font-size: 18px;
+        font-family: "LOREAL-Essentielle-Bold";
+      }
+
+  
+      .margin-small {
+        margin-right: 20px;
+      }
+      .banner-container {
+        display: flex; /* flexbox para centrar el contenido */
+        justify-content: center; /* Centra horizontalmente el contenido */
+        align-items: center; /* Centra verticalmente el contenido */
+        max-width: 1024px;
+        margin: 0 auto; /* Añade margen automático para centrar el contenedor */
+      }
+
+      .image-banner {
+        border-radius: 10px;
+        width: 100%; /* Hace que la imagen tenga un 100% de ancho y ocupe todo el ancho del div */
+      }
+
+      /*** ESTILOS IMAGENES DE LOS LADOS DEL TITULO ***/
+      .imagen-container {
+        display: flex; /* flexbox para centrar el contenido */
+        justify-content: center; /* Centra horizontalmente el contenido */
+        align-items: center; /* Centra verticalmente el contenido */
+        max-width: 25%;
+      }
+
+      .image-logo {
+        width: 100%; /* Hace que la imagen tenga un 100% de ancho y ocupe todo el ancho del div */
+      }
+
+      /*** ESTILOS BOTÓN SLIDE LEFT ***/
+      .ov-btn-slide-left {
+        background: #ffffff; /* color de fondo */
+        color: #000000; /* color de fuente */
+        border: 2px solid #a1aaa5; /* tamaño y color de borde */
+        padding: 16px 20px;
+        border-radius: 3px; /* redondear bordes */
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        display: inline-block;
+        margin-bottom: 40px;
+      }
+      .ov-btn-slide-left:hover {
+        color: #ffffff; /* color de fuente hover */
+      }
+      .ov-btn-slide-left::after {
+        content: "";
+        background: #000000; /* color de fondo hover */
+        position: absolute;
+        z-index: -1;
+        padding: 16px 20px;
+        display: block;
+        top: 0;
+        bottom: 0;
+        left: -100%;
+        right: 100%;
+        -webkit-transition: all 0.35s;
+        transition: all 0.35s;
+      }
+      .ov-btn-slide-left:hover::after {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        -webkit-transition: all 0.35s;
+        transition: all 0.35s;
+      }
+
+      .image-container {
+        display: flex; /* flexbox para centrar el contenido */
+        justify-content: center; /* Centra horizontalmente el contenido */
+        align-items: center; /* Centra verticalmente el contenido */
+      }
+
+      .title-images-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="banner-container">
+        <img
+          class="image-banner"
+          src="./public/BANNER PERU_1.jpg"
+          alt="texto_alternativo"
+        />
+      </div>
+
+      <div class="title-images-container">
+        <div class="imagen-container">
+          <img
+            class="image-logo"
+            src="./public/la_roche_posay_1200_1200.png"
+            alt="Logo de La Roche Posay"
+          />
+        </div>
+
+        <div class="imagen-container">
+          <img
+            class="image-logo"
+            src="./public/vichy_1200_1200.png"
+            alt="Logo de Vichy"
+          />
+        </div>
+
+        <div class="imagen-container">
+          <img
+            class="image-logo"
+            src="./public/Cera_ve_1200_1200.png"
+            alt="Logo de CeraVe"
+          />
+        </div>
+      </div>
+
+      <h2 class="titulo mb-4">
+        Regístrate, haz parte de la comunidad médica de L'Oréal y recibe en
+        primicia noticias, próximos congresos y lanzamientos de productos
+      </h2>
+      <form action="https://cl.s7.exct.net/DEManager.aspx" method="post">
+        <input type="hidden" name="_clientID" value="[HelpDesk]" />
+        <input type="hidden" name="_deExternalKey" value="[HelpDesk]" />
+        <input type="hidden" name="_action" value="Add" />
+        <input type="hidden" name="_returnXML" value="0" />
+        <input type="hidden" name="_successURL" value="[SUCCESS.html]" />
+        <input type="hidden" name="_errorURL" value="[ERROR.html]" />
+        <input type="hidden" name="Brand" value="[HelpDesk]" />
+        <input type="hidden" name="Channel" value="Landing Page" />
+        <input type="hidden" name="subjectArea" value="Loreal" />
+        <input type="hidden" name="Campaign_name" value="[HelpDesk]" />
+        <input type="hidden" name="Source" value="Automatic" />
+        <input type="hidden" name="country-code" value="[HelpDesk]" />
+        <input type="hidden" name="preferred-locale" value="[HelpDesk]" />
+
+        <!--VALORES POR DEFECTO-->
+        <input type="hidden" name="salon-name" value="Medico" />
+        <input type="hidden" name="salon-id" value="1" />
+        <input type="hidden" name="Country" value="PE" />
+
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input
+            name="first-name"
+            type="text"
+            class="form-control"
+            id="nombre"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="apellido" class="form-label">Apellidos</label>
+          <input
+            name="last-name"
+            type="text"
+            class="form-control"
+            id="apellido"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo Electrónico</label>
+          <input
+            name="email"
+            type="email"
+            class="form-control"
+            id="email"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="telefono" class="form-label">Número telefónico</label>
+          <div class="input-group">
+            <input
+              name="phone-mobile"
+              type="tel"
+              class="form-control"
+              id="telefono"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="especialidad" class="form-label">Especialidad</label>
+          <select
+            name="specialization"
+            class="form-select"
+            id="especialidad"
+            required
+          >
+            <option value="">Seleccionar especialidad</option>
+            <option value="Dermatología">Dermatología</option>
+            <option value="Pediatría">Pediatría</option>
+            <option value="Oncología">Oncología</option>
+            <option value="Medicina estética">Medicina estética</option>
+            <option value="Medicina general">Medicina general</option>
+            <option value="Cirugía plástica">Cirugía plástica</option>
+            <option value="Alergología">Alergología</option>
+            <option value="Infectología">Infectología</option>
+            <option value="Inmunología">Inmunología</option>
+          </select>
+        </div>
+
+        <div class="mt-3 mb-5">
+          <label for="ciudad" class="form-label">Ciudad</label>
+          <div class="input-group">
+            <select
+              name="city"
+              class="form-select margin-small"
+              id="ciudad"
+              required
+            >
+              <option value="">Ciudad</option>
+              <option value="Lima">Lima</option>
+              <option value="Arequipa">Arequipa</option>
+              <option value="Trujillo">Trujillo</option>
+              <option value="Chiclayo">Chiclayo</option>
+              <option value="Piura">Piura</option>
+              <option value="Cusco">Cusco</option>
+              <option value="Iquitos">Iquitos</option>
+              <option value="Huancayo">Huancayo</option>
+              <option value="Tacna">Tacna</option>
+              <option value="Chimbote">Chimbote</option>
+              <option value="Pucallpa">Pucallpa</option>
+              <option value="Juliaca">Juliaca</option>
+              <option value="Ica">Ica</option>
+              <option value="Cajamarca">Cajamarca</option>
+              <option value="Ayacucho">Ayacucho</option>
+              <option value="Huaraz">Huaraz</option>
+              <option value="Chincha Alta">Chincha Alta</option>
+              <option value="Cerro de Pasco">Cerro de Pasco</option>
+              <option value="Puno">Puno</option>
+              <option value="Sullana">Sullana</option>
+              <option value="Tumbes">Tumbes</option>
+              <option value="Tarapoto">Tarapoto</option>
+              <option value="Paita">Paita</option>
+              <option value="Cajabamba">Cajabamba</option>
+              <option value="Chachapoyas">Chachapoyas</option>
+              <option value="Moyobamba">Moyobamba</option>
+              <option value="Barranca">Barranca</option>
+              <option value="Huaral">Huaral</option>
+              <option value="Huánuco">Huánuco</option>
+              <option value="Moquegua">Moquegua</option>
+              <option value="Puerto Maldonado">Puerto Maldonado</option>
+              <option value="Huacho">Huacho</option>
+              <option value="Tingo María">Tingo María</option>
+              <option value="Jaén">Jaén</option>
+              <option value="Talara">Talara</option>
+              <option value="Pisco">Pisco</option>
+              <option value="Chota">Chota</option>
+              <option value="Pacasmayo">Pacasmayo</option>
+              <option value="Yurimaguas">Yurimaguas</option>
+              <option value="Ferreñafe">Ferreñafe</option>
+              <option value="Otro">Otro</option>
+            </select>
+            <div class="w-50">
+              <input
+                type="date"
+                name="birthdate"
+                value="2023-01-01"
+                min="1948-12-31"
+                max="2007-12-31"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3 mb-5">
+          <div class="form-check form-switch">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckDefault"
+              name="Opt_in"
+              required
+            />
+            <label class="form-check-label" for="flexSwitchCheckDefault">
+              <p>
+                Al suministrarnos tus datos personales a L’Oréal Centroamérica
+                S.A., aceptas que eres mayor de 18 años. Consientes y aceptas
+                las
+                <a
+                  href="https://www.loreal.com/es-pe/peru/pages/group/privacy-policy-pe/"
+                  target="_blank"
+                  >políticas de privacidad de datos</a
+                >. Como titular de los datos personales tienes derecho a
+                solicitar el acceso, rectificación y actualización y, en su
+                caso, supresión de los mismos de nuestra base de datos.
+              </p>
+            </label>
+          </div>
+
+          <div class="form-check form-switch">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="switchCheckDefault"
+            />
+            <label class="form-check-label" for="switchCheckDefault">
+              <p>
+                Me gustaría recibir correos personalizados de L’Oréal
+                Dermatological Beauty. Puedes cancelar tu suscripción en
+                cualquier momento a través del enlace que aparece en los correos
+                que enviamos
+              </p>
+            </label>
+          </div>
+        </div>
+
+        <button class="ov-btn-slide-left" type="submit">
+          SUSCRÍBETE AL BOLETÍN
+        </button>
+      </form>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
